@@ -1,13 +1,13 @@
 import django.db
 
-from rest_framework import status
+from rest_framework import status, generics
 from rest_framework.response import Response
-from rest_framework import generics
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
+
+from ippo_tutor.apps.core.permissions import IsTutorOrTargetUser, IsTutor
 
 from .models import User
 from .serializers import UserSerializer, ChangeUserPasswordSerializer, CreateUserSerializer
-from ippo_tutor.apps.core.permissions import IsTutorOrTargetUser
 
 
 class UserRetrieveAndPasswordChangeAPIView(generics.RetrieveUpdateAPIView):
@@ -34,15 +34,17 @@ class UserRetrieveAndPasswordChangeAPIView(generics.RetrieveUpdateAPIView):
 
 
 class UserListCreateAPIView(generics.ListCreateAPIView):
-    permission_classes = (IsAuthenticated, IsAdminUser)
+    permission_classes = (IsAuthenticated,)
     queryset = User.objects.all()
 
     def list(self, request, *args, **kwargs):
         self.serializer_class = UserSerializer
+        self.permission_classes = super().permission_classes + (IsTutor,)
         return super().list(request, *args, **kwargs)
 
     def create(self, request, *args, **kwargs):
         self.serializer_class = CreateUserSerializer
+        self.permission_classes = super().permission_classes + (IsAdminUser,)
         try:
             return super().create(request, *args, **kwargs)
         except django.db.utils.IntegrityError:

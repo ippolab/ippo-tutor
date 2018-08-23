@@ -6,5 +6,8 @@ class AuthenticationConfig(AppConfig):
     label = 'authentication'
     verbose_name = 'Authentication'
 
+    def ready(self):
+        import ippo_tutor.apps.authentication.signals
+
 
 default_app_config = 'ippo_tutor.apps.authentication.AuthenticationConfig'

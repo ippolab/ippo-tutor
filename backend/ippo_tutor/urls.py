@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('api/users/', include('ippo_tutor.apps.authentication.urls')),
+    path('api/students/', include('ippo_tutor.apps.students.urls')),
     path('admin/', admin.site.urls),
 ]
