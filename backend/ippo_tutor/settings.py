@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_auth',
 
+    'ippo_tutor.apps.core',
     'ippo_tutor.apps.authentication',
 ]
 
