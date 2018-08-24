@@ -1,9 +1,8 @@
-from rest_framework import generics, status
+from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.exceptions import NotFound
-from rest_framework.response import Response
 
 from ippo_tutor.apps.core.permissions import IsTutorOrTargetUser, IsTutor
+from ippo_tutor.apps.core.helpers import DRFViewPermissionsSubstituteManager
 
 from .models import StudentProfile
 from .serializers import StudentProfileSerializer
@@ -19,7 +18,6 @@ class StudentProfileRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
     permission_classes = (IsAuthenticated,)
     queryset = StudentProfile.objects.select_related('user')
     serializer_class = StudentProfileSerializer
-    lookup_field = 'username'
 
     def get_object(self):
         username = self.kwargs['username']
@@ -28,15 +26,10 @@ class StudentProfileRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
         return user
 
     def retrieve(self, request, *args, **kwargs):
-        default_permission_classes = self.permission_classes
-        self.permission_classes += (IsTutorOrTargetUser,)
-        result = super().retrieve(request, *args, **kwargs)
-        self.permission_classes = default_permission_classes
-        return result
+        with DRFViewPermissionsSubstituteManager(self, attr_value=(IsTutorOrTargetUser,)):
+            return super().retrieve(request, *args, **kwargs)
 
     def update(self, request, *args, **kwargs):
-        default_permission_classes = self.permission_classes
-        self.permission_classes += (IsTutor,)
-        result = super().update(request, *args, **kwargs)
-        self.permission_classes = default_permission_classes
-        return result
+        with DRFViewPermissionsSubstituteManager(self, attr_value=(IsTutor,)):
+            return super().update(request, *args, **kwargs)
+

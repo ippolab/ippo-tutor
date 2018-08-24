@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5677beb-12f1-4dca-873c-d4a5febd8b1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/authentication/signals.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/core/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/students/migrations/0002_auto_20180823_1127.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/students/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/students/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/students/views.py" afterDir="false" />
+    <list default="true" id="c5677beb-12f1-4dca-873c-d4a5febd8b1a" name="Default Changelist" comment="Added students profiles to users. Profiles created themselves just after user creation">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/core/helpers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ippo_tutor/apps/authentication/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ippo_tutor/apps/authentication/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ippo_tutor/apps/authentication/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ippo_tutor/apps/authentication/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ippo_tutor/apps/authentication/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/ippo_tutor/apps/authentication/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ippo_tutor/apps/authentication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ippo_tutor/apps/authentication/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ippo_tutor/apps/core/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/ippo_tutor/apps/core/permissions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ippo_tutor/apps/core/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ippo_tutor/apps/students/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ippo_tutor/apps/students/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ippo_tutor/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ippo_tutor/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ippo_tutor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ippo_tutor/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,19 +71,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Django Console" value="763" />
+          <entry key="Django Console" value="843" />
           <entry key="Pipfile" value="2" />
-          <entry key="dummy" value="15" />
-          <entry key="py" value="11289" />
+          <entry key="dummy" value="22" />
+          <entry key="py" value="12558" />
           <entry key="py@backend" value="78" />
-          <entry key="txt" value="328" />
+          <entry key="txt" value="442" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CommandLine" value="78" />
-          <entry key="PLAIN_TEXT" value="343" />
-          <entry key="Python" value="12052" />
+          <entry key="PLAIN_TEXT" value="464" />
+          <entry key="Python" value="13401" />
           <entry key="TOML file" value="2" />
         </counts>
       </usages-collector>
@@ -103,7 +96,7 @@
           <entry key="authentication_user_groups" value="1" />
           <entry key="directory" value="1" />
           <entry key="http" value="1" />
-          <entry key="py" value="190" />
+          <entry key="py" value="193" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
@@ -111,7 +104,7 @@
         <counts>
           <entry key="Database Element" value="8" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="190" />
+          <entry key="Python" value="193" />
           <entry key="Scratch" value="2" />
           <entry key="TOML file" value="2" />
         </counts>
@@ -137,12 +130,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/students/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="29" column="49" lean-forward="true" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+            <state relative-caret-position="201">
+              <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1535034116306" expanded="true" signature="408:413" ph="..." />
-                <marker date="1535034116306" expanded="true" signature="674:679" ph="..." />
+                <marker date="1535072429703" expanded="true" signature="385:390" ph="..." />
+                <marker date="1535072429703" expanded="true" signature="651:656" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ippo_tutor/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="135" column="60" lean-forward="true" selection-start-line="135" selection-start-column="60" selection-end-line="135" selection-end-column="60" />
+              <folding>
+                <element signature="e#309#318#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,24 +167,38 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/core/utils.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/core/helpers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="28" column="61" lean-forward="true" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
+              <folding>
+                <marker date="1535069106789" expanded="true" signature="33:38" ph="..." />
+                <marker date="1535069106789" expanded="true" signature="660:661" ph="..." />
+                <marker date="1535069106789" expanded="true" signature="660:665" ph="..." />
+                <marker date="1535069106789" expanded="true" signature="883:1068" ph="..." />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/rest_framework/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
+            <state relative-caret-position="208">
               <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/rest_framework/generics.py">
+        <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/authentication/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-784">
-              <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+            <state relative-caret-position="176">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+                <marker date="1535024497099" expanded="true" signature="689:694" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -199,11 +218,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/authentication/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="6" column="73" lean-forward="true" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+            <state relative-caret-position="393">
+              <caret line="54" column="55" lean-forward="true" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
               <folding>
-                <marker date="1535034116312" expanded="true" signature="2116:2121" ph="..." />
+                <element signature="e#0#16#0" expanded="true" />
+                <marker date="1535070214286" expanded="true" signature="2502:2507" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/rest_framework/mixins.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -232,7 +261,6 @@
         <option value="$PROJECT_DIR$/ippo_tutor/apps/authentication/permissions.py" />
         <option value="$PROJECT_DIR$/ippo_tutor/apps/authentication/admin.py" />
         <option value="$PROJECT_DIR$/ippo_tutor/apps/authentication/urls.py" />
-        <option value="$PROJECT_DIR$/ippo_tutor/settings.py" />
         <option value="$PROJECT_DIR$/ippo_tutor/apps/authentication/__init__.py" />
         <option value="$PROJECT_DIR$/ippo_tutor/apps/authentication/serializers.py" />
         <option value="$PROJECT_DIR$/ippo_tutor/apps/authentication/signals.py" />
@@ -242,10 +270,12 @@
         <option value="$PROJECT_DIR$/ippo_tutor/apps/students/admin.py" />
         <option value="$PROJECT_DIR$/ippo_tutor/apps/core/permissions.py" />
         <option value="$PROJECT_DIR$/ippo_tutor/apps/students/urls.py" />
-        <option value="$PROJECT_DIR$/ippo_tutor/apps/students/views.py" />
-        <option value="$PROJECT_DIR$/ippo_tutor/apps/authentication/views.py" />
-        <option value="$PROJECT_DIR$/ippo_tutor/apps/core/utils.py" />
         <option value="$PROJECT_DIR$/ippo_tutor/apps/students/serializers.py" />
+        <option value="$PROJECT_DIR$/ippo_tutor/apps/core/utils.py" />
+        <option value="$PROJECT_DIR$/ippo_tutor/apps/core/helpers.py" />
+        <option value="$PROJECT_DIR$/ippo_tutor/apps/authentication/views.py" />
+        <option value="$PROJECT_DIR$/ippo_tutor/settings.py" />
+        <option value="$PROJECT_DIR$/ippo_tutor/apps/students/views.py" />
       </list>
     </option>
   </component>
@@ -384,11 +414,19 @@
       <option name="project" value="LOCAL" />
       <updated>1534993156240</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added students profiles to users. Profiles created themselves just after user creation">
+      <created>1535066133982</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1535066133982</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1920" height="1052" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1340812" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -425,7 +463,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Pipfile.lock. Improved users api. Create/delete users and get all users lust(only for staff and admin users). Change password. Login/logout into service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Pipfile.lock. Improved users api. Create/delete users and get all users lust(only for staff and admin users). Change password. Login/logout into service" />
+    <MESSAGE value="Added students profiles to users. Profiles created themselves just after user creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added students profiles to users. Profiles created themselves just after user creation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/django/contrib/auth/models.py">
@@ -607,33 +646,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/authentication/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1535024497099" expanded="true" signature="689:694" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ippo_tutor/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding>
             <element signature="e#634#666#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ippo_tutor/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-          <folding>
-            <element signature="e#309#318#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -669,6 +687,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/rest_framework/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/rest_framework/generics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-784">
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/rest_framework/mixins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/students/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <marker date="1535034185599" expanded="true" signature="215:220" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/authentication/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
@@ -680,17 +730,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/rest_framework/response.py">
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/rest_framework/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        <state relative-caret-position="208">
+          <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/rest_framework/mixins.py">
+    <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/authentication/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        <state relative-caret-position="393">
+          <caret line="54" column="55" lean-forward="true" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <marker date="1535070214286" expanded="true" signature="2502:2507" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ippo_tutor/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="135" column="60" lean-forward="true" selection-start-line="135" selection-start-column="60" selection-end-line="135" selection-end-column="60" />
+          <folding>
+            <element signature="e#309#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/core/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="61" lean-forward="true" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
+          <folding>
+            <marker date="1535069106789" expanded="true" signature="33:38" ph="..." />
+            <marker date="1535069106789" expanded="true" signature="660:661" ph="..." />
+            <marker date="1535069106789" expanded="true" signature="660:665" ph="..." />
+            <marker date="1535069106789" expanded="true" signature="883:1068" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -704,52 +781,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/rest_framework/generics.py">
+    <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/authentication/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-784">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/backend-uKuV5EKD/lib/python3.7/site-packages/rest_framework/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/authentication/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="6" column="73" lean-forward="true" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+        <state relative-caret-position="176">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <marker date="1535034116312" expanded="true" signature="2116:2121" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/core/utils.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/students/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <marker date="1535034185599" expanded="true" signature="215:220" ph="..." />
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1535024497099" expanded="true" signature="689:694" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/students/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="29" column="49" lean-forward="true" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+        <state relative-caret-position="201">
+          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1535034116306" expanded="true" signature="408:413" ph="..." />
-            <marker date="1535034116306" expanded="true" signature="674:679" ph="..." />
+            <marker date="1535072429703" expanded="true" signature="385:390" ph="..." />
+            <marker date="1535072429703" expanded="true" signature="651:656" ph="..." />
           </folding>
         </state>
       </provider>
