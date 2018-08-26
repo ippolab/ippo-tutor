@@ -14,8 +14,8 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'password')
-        read_only_fields = ('username',)
+        fields = ('username', 'password', 'is_tutor')
+        read_only_fields = ('username', 'is_tutor')
 
 
 class CreateUserSerializer(serializers.ModelSerializer):
@@ -29,10 +29,14 @@ class CreateUserSerializer(serializers.ModelSerializer):
         max_length=128,
         write_only=True
     )
+    is_tutor = serializers.BooleanField(
+        write_only=True,
+        default=False
+    )
 
     class Meta:
         model = User
-        fields = ('username', 'password')
+        fields = ('username', 'password', 'is_tutor')
 
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)

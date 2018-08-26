@@ -1,19 +1,19 @@
 from rest_framework import generics, viewsets, mixins
 from rest_framework.permissions import IsAuthenticated
 
-from ippo_tutor.apps.core.permissions import IsTutorOrTargetUser, IsTutor
+from ippo_tutor.apps.core.permissions import IsTutorOrTargetUser, IsTutor, IsAdminOrTargetUser
 
-from .models import StudentProfile
-from .serializers import StudentProfileSerializer
+from .models import TutorProfile
+from .serializers import TutorProfileSerializer
 
 
-class StudentProfileViewSet(mixins.ListModelMixin,
-                            mixins.RetrieveModelMixin,
-                            mixins.UpdateModelMixin,
-                            viewsets.GenericViewSet):
+class TutorProfileViewSet(mixins.ListModelMixin,
+                          mixins.RetrieveModelMixin,
+                          mixins.UpdateModelMixin,
+                          viewsets.GenericViewSet):
     permission_classes = [IsAuthenticated]
-    queryset = StudentProfile.objects.select_related('user')
-    serializer_class = StudentProfileSerializer
+    queryset = TutorProfile.objects.select_related('user')
+    serializer_class = TutorProfileSerializer
     lookup_field = 'username'
 
     def get_object(self):
@@ -24,9 +24,9 @@ class StudentProfileViewSet(mixins.ListModelMixin,
 
     def get_permissions(self):
         permission_classes = self.permission_classes[:]
-        if self.action in ['list', 'update']:
+        if self.action in ['list', 'retrieve']:
             permission_classes += [IsTutor]
         else:
-            permission_classes += [IsTutorOrTargetUser]
+            permission_classes += [IsAdminOrTargetUser]
 
         return [permission() for permission in permission_classes]

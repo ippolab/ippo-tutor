@@ -26,7 +26,6 @@ class UserViewSet(viewsets.ModelViewSet):
         return [permission() for permission in permission_classes]
 
     def get_serializer_class(self):
-        print('action: ', self.action)
         if self.action in ['retrieve', 'list']:
             return UserSerializer
         elif self.action == 'update':

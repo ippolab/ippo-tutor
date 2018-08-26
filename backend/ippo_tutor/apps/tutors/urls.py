@@ -1,9 +1,9 @@
 from rest_framework import routers
 
-from .views import StudentProfileViewSet
+from .views import TutorProfileViewSet
 
 router = routers.DefaultRouter()
-router.register('', StudentProfileViewSet)
+router.register('', TutorProfileViewSet)
 
 urlpatterns = [
 

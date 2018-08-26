@@ -3,8 +3,8 @@ from django.db import models
 from ippo_tutor.apps.authentication.models import User
 
 
-class StudentProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='student')
+class TutorProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='tutor')
 
     first_name = models.CharField(max_length=255, blank=True)
     second_name = models.CharField(max_length=255, blank=True)
