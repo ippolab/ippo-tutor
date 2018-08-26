@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5677beb-12f1-4dca-873c-d4a5febd8b1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/authentication/helpers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/students/migrations/0005_auto_20180826_0021.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/tutors/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/tutors/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/tutors/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/tutors/models.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/tutors/serializers.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/tutors/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ippo_tutor/apps/tutors/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ippo_tutor/apps/authentication/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ippo_tutor/apps/authentication/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ippo_tutor/apps/authentication/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/ippo_tutor/apps/authentication/serializers.py" afterDir="false" />
@@ -84,13 +89,13 @@
           <entry key="dummy" value="22" />
           <entry key="py" value="14601" />
           <entry key="py@backend" value="78" />
-          <entry key="txt" value="528" />
+          <entry key="txt" value="736" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CommandLine" value="78" />
-          <entry key="PLAIN_TEXT" value="550" />
+          <entry key="PLAIN_TEXT" value="758" />
           <entry key="Python" value="15744" />
           <entry key="TOML file" value="2" />
         </counts>
@@ -122,21 +127,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/tutors/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="83" selection-start-line="6" selection-start-column="83" selection-end-line="6" selection-end-column="83" />
+            <state relative-caret-position="208">
+              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/authentication/helpers.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -440,14 +440,21 @@
       <option name="project" value="LOCAL" />
       <updated>1535238119937</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added tutors app and api. User's profiles are now accessible through 'student' or 'tutor' fields, not through 'profile'. Added new permissions and removed helpers from 'core' app">
+      <created>1535243469224</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1535243469224</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13553895" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13553895" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -462,8 +469,8 @@
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32967034" />
       <window_info anchor="bottom" id="manage.py@backend" order="10" weight="0.32967034" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5016026" side_tool="true" weight="0.33186814" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49839744" weight="0.34906697" />
-      <window_info anchor="bottom" id="Python Console" order="13" visible="true" weight="0.32930845" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49839744" visible="true" weight="0.34906697" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32930845" />
       <window_info anchor="bottom" id="REST Client" order="14" weight="0.44505495" />
       <window_info anchor="bottom" id="Messages" order="15" />
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.32967034" />
@@ -484,7 +491,8 @@
     <MESSAGE value="Added Pipfile.lock. Improved users api. Create/delete users and get all users lust(only for staff and admin users). Change password. Login/logout into service" />
     <MESSAGE value="Added students profiles to users. Profiles created themselves just after user creation" />
     <MESSAGE value="A bunch of small api views have been replaced by single viewset" />
-    <option name="LAST_COMMIT_MESSAGE" value="A bunch of small api views have been replaced by single viewset" />
+    <MESSAGE value="Added tutors app and api. User's profiles are now accessible through 'student' or 'tutor' fields, not through 'profile'. Added new permissions and removed helpers from 'core' app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tutors app and api. User's profiles are now accessible through 'student' or 'tutor' fields, not through 'profile'. Added new permissions and removed helpers from 'core' app" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" />
@@ -820,18 +828,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/authentication/helpers.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/tutors/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="83" selection-start-line="6" selection-start-column="83" selection-end-line="6" selection-end-column="83" />
+        <state relative-caret-position="208">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ippo_tutor/apps/authentication/helpers.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
