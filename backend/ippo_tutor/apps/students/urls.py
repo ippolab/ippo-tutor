@@ -6,8 +6,6 @@ router = routers.DefaultRouter()
 router.register('students', StudentProfileViewSet)
 router.register('groups', GroupViewSet)
 
-urlpatterns = [
-
-]
+urlpatterns = []
 
 urlpatterns += router.urls
