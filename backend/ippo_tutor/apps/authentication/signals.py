@@ -3,7 +3,6 @@ from django.dispatch import receiver
 
 from ippo_tutor.apps.students.models import StudentProfile
 from ippo_tutor.apps.tutors.models import TutorProfile
-
 from .models import User
 
 

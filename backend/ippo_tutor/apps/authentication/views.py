@@ -1,10 +1,9 @@
-from rest_framework import status, generics, viewsets
-from rest_framework.response import Response
-from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from rest_framework import status, viewsets
 from rest_framework.exceptions import ValidationError
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from rest_framework.response import Response
 
 from ippo_tutor.apps.core.permissions import IsTutorOrTargetUser, IsTutor
-
 from .models import User
 from .serializers import UserSerializer, ChangeUserPasswordSerializer, CreateUserSerializer
 

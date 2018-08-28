@@ -2,7 +2,6 @@ from rest_framework import generics, viewsets, mixins
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 from ippo_tutor.apps.core.permissions import IsTutorOrTargetUser, IsTutor
-
 from .models import StudentProfile, Group
 from .serializers import StudentProfileSerializer, GroupSerializer
 

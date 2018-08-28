@@ -1,8 +1,7 @@
 from rest_framework import generics, viewsets, mixins
 from rest_framework.permissions import IsAuthenticated
 
-from ippo_tutor.apps.core.permissions import IsTutorOrTargetUser, IsTutor, IsAdminOrTargetUser
-
+from ippo_tutor.apps.core.permissions import IsTutor, IsAdminOrTargetUser
 from .models import TutorProfile
 from .serializers import TutorProfileSerializer
 
