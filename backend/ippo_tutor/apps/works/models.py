@@ -27,7 +27,7 @@ class Work(models.Model):
     loaded = models.DateTimeField(auto_now_add=True)
     checked = models.DateTimeField(null=True)
 
-    student = models.ForeignKey(StudentProfile, on_delete=models.CASCADE)
+    student = models.ForeignKey(StudentProfile, on_delete=models.CASCADE, related_name='works')
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     subject_type = models.ForeignKey(SubjectType, on_delete=models.CASCADE)
-    tutor = models.ForeignKey(TutorProfile, null=True, on_delete=models.SET_NULL)
+    tutor = models.ForeignKey(TutorProfile, null=True, on_delete=models.SET_NULL, related_name='works')
