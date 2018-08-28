@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'ippo_tutor.apps.authentication',
     'ippo_tutor.apps.students',
     'ippo_tutor.apps.tutors',
+    'ippo_tutor.apps.works'
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ippo_tutor.urls'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'files')
 
 TEMPLATES = [
     {
