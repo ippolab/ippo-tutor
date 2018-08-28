@@ -1,9 +1,10 @@
 from rest_framework import routers
 
-from .views import StudentProfileViewSet
+from .views import StudentProfileViewSet, GroupViewSet
 
 router = routers.DefaultRouter()
-router.register('', StudentProfileViewSet)
+router.register('students', StudentProfileViewSet)
+router.register('groups', GroupViewSet)
 
 urlpatterns = [
 
