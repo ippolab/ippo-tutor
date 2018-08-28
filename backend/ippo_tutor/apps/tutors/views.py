@@ -1,15 +1,12 @@
-from rest_framework import generics, viewsets, mixins
-from rest_framework.permissions import IsAuthenticated
+from rest_framework import generics, viewsets
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
-from ippo_tutor.apps.core.permissions import IsTutor, IsAdminOrTargetUser
+from ippo_tutor.apps.core.permissions import IsTutor
 from .models import TutorProfile
 from .serializers import TutorProfileSerializer
 
 
-class TutorProfileViewSet(mixins.ListModelMixin,
-                          mixins.RetrieveModelMixin,
-                          mixins.UpdateModelMixin,
-                          viewsets.GenericViewSet):
+class TutorProfileViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = TutorProfile.objects.select_related('user')
     serializer_class = TutorProfileSerializer
@@ -26,6 +23,6 @@ class TutorProfileViewSet(mixins.ListModelMixin,
         if self.action in ['list', 'retrieve']:
             permission_classes += [IsTutor]
         else:
-            permission_classes += [IsAdminOrTargetUser]
+            permission_classes += [IsAdminUser]
 
         return [permission() for permission in permission_classes]
