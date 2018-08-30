@@ -5,11 +5,11 @@ from rest_framework.routers import DefaultRouter
 from .views import UserViewSet
 
 router = DefaultRouter()
-router.register('', UserViewSet)
+router.register('users', UserViewSet)
 
 urlpatterns = [
-    path('login/', LoginView.as_view()),
-    path('logout/', LogoutView.as_view()),
+    path('users/login/', LoginView.as_view()),
+    path('users/logout/', LogoutView.as_view()),
 ]
 
 urlpatterns += router.urls
