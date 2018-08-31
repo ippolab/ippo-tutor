@@ -29,25 +29,28 @@ class SubjectType(models.Model):
         return self.name
 
 
-def upload(instance: 'Work', file_name):
-    file_path = os.path.join("students_files",
-                             instance.student.group.__str__(),
-                             instance.student.__str__(),
-                             instance.subject.__str__(),
-                             instance.subject_type.__str__(),
-                             file_name)
+def upload(instance, file_name):
+    file_path = os.path.join(
+        'students_files',
+        str(instance.student.group),
+        str(instance.student),
+        str(instance.subject),
+        str(instance.subject_type),
+        file_name
+    )
+
     return file_path
 
 
 class Work(models.Model):
     STATUSES = (
-        ('accepted', 'accepted'),
-        ('to fix', 'to fix'),
-        ('not done', 'not done'),
+        ('A', 'Accepted'),
+        ('F', 'To fix'),
+        ('N', 'Not done'),
     )
 
     title = models.CharField(max_length=255)
-    status = models.CharField(max_length=8, choices=STATUSES, default='not done')
+    status = models.CharField(max_length=1, choices=STATUSES, default='N')
 
     file = models.FileField(storage=OverwriteStorage(), upload_to=upload, null=True)
 
@@ -58,3 +61,6 @@ class Work(models.Model):
     subject_type = models.ForeignKey(SubjectType, on_delete=models.CASCADE)
     student = models.ForeignKey(StudentProfile, on_delete=models.CASCADE, related_name='works')
     tutor = models.ForeignKey(TutorProfile, null=True, on_delete=models.SET_NULL, related_name='works')
+
+    def __str__(self):
+        return self.title

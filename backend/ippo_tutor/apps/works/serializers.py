@@ -20,4 +20,14 @@ class WorkSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Work
-        fields = '__all__'
+        fields = (
+            'title',
+            'status',
+            'file',
+            'loaded',
+            'checked',
+            'subject',
+            'subject_type',
+            'student',
+            'tutor',
+        )
