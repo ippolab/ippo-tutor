@@ -717,39 +717,38 @@ model</ColNames>
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <column id="160" parent="24" name="subject_id">
+    <column id="160" parent="24" name="student_id">
       <Position>7</Position>
       <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="161" parent="24" name="subject_type_id">
+    <column id="161" parent="24" name="subject_id">
       <Position>8</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="162" parent="24" name="tutor_id">
+    <column id="162" parent="24" name="subject_type_id">
       <Position>9</Position>
-      <DataType>integer|0s</DataType>
-    </column>
-    <column id="163" parent="24" name="student_id">
-      <Position>10</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="164" parent="24" name="works_work_subject_id_f8ab9ce8">
+    <column id="163" parent="24" name="tutor_id">
+      <Position>10</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <index id="164" parent="24" name="works_work_student_id_f09fed88">
+      <ColNames>student_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="165" parent="24" name="works_work_subject_id_f8ab9ce8">
       <ColNames>subject_id</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <index id="165" parent="24" name="works_work_subject_type_id_0ed1ad6b">
+    <index id="166" parent="24" name="works_work_subject_type_id_0ed1ad6b">
       <ColNames>subject_type_id</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <index id="166" parent="24" name="works_work_tutor_id_0faef71b">
+    <index id="167" parent="24" name="works_work_tutor_id_0faef71b">
       <ColNames>tutor_id</ColNames>
-      <ColumnCollations></ColumnCollations>
-    </index>
-    <index id="167" parent="24" name="works_work_student_id_f09fed88">
-      <ColNames>student_id</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
     <key id="168" parent="24">
@@ -757,29 +756,29 @@ model</ColNames>
       <Primary>1</Primary>
     </key>
     <foreign-key id="169" parent="24">
+      <ColNames>student_id</ColNames>
+      <RefTableName>students_studentprofile</RefTableName>
+      <RefColNames>id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <foreign-key id="170" parent="24">
       <ColNames>subject_id</ColNames>
       <RefTableName>works_subject</RefTableName>
       <RefColNames>id</RefColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
     </foreign-key>
-    <foreign-key id="170" parent="24">
+    <foreign-key id="171" parent="24">
       <ColNames>subject_type_id</ColNames>
       <RefTableName>works_subjecttype</RefTableName>
       <RefColNames>id</RefColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
     </foreign-key>
-    <foreign-key id="171" parent="24">
+    <foreign-key id="172" parent="24">
       <ColNames>tutor_id</ColNames>
       <RefTableName>tutors_tutorprofile</RefTableName>
-      <RefColNames>id</RefColNames>
-      <Deferrable>1</Deferrable>
-      <InitiallyDeferred>1</InitiallyDeferred>
-    </foreign-key>
-    <foreign-key id="172" parent="24">
-      <ColNames>student_id</ColNames>
-      <RefTableName>students_studentprofile</RefTableName>
       <RefColNames>id</RefColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>

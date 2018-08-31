@@ -1,4 +1,4 @@
-from rest_framework import generics, viewsets, mixins
+from rest_framework import generics, viewsets
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 from ippo_tutor.apps.core.permissions import IsTutorOrTargetUser, IsTutor
@@ -6,10 +6,7 @@ from .models import StudentProfile, Group
 from .serializers import StudentProfileSerializer, GroupSerializer
 
 
-class StudentProfileViewSet(mixins.ListModelMixin,
-                            mixins.RetrieveModelMixin,
-                            mixins.UpdateModelMixin,
-                            viewsets.GenericViewSet):
+class StudentProfileViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = StudentProfile.objects.select_related('user')
     serializer_class = StudentProfileSerializer

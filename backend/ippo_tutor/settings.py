@@ -63,7 +63,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ippo_tutor.urls'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'files')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_files')
 
 TEMPLATES = [
     {
