@@ -1,0 +1,52 @@
+/* CSS style*/
+
+.card-body {
+  border: 15px solid white;
+  border-radius: 10px;
+  background: white;
+  padding-top: 300px;
+}
+
+.col-lg {
+  padding-top: 150px;
+
+
+}
+
+
+.btn {
+  margin-top: 10px;
+}
+
+
+/* Media requests */
+
+@media (min-width: 516px) {
+
+  .card-body {
+    width: 300px;
+  }
+
+}
+
+@media (max-width: 515px) {
+  .card-body {
+    width: 300px;
+
+  }
+
+}
+
+@media (min-width: 300px) {
+  .card-body {
+    width: 300px;
+    margin:0;
+    padding:0;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  /* Default settings*/
+}
+
