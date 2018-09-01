@@ -1,7 +1,8 @@
 import os
 
-from django.conf import settings
+from django.core.validators import FileExtensionValidator
 from django.core.files.storage import FileSystemStorage
+from django.conf import settings
 from django.db import models
 
 from ippo_tutor.apps.students.models import StudentProfile
@@ -36,6 +37,7 @@ def upload(instance, file_name):
         str(instance.student),
         str(instance.subject),
         str(instance.subject_type),
+        str(instance.title),
         file_name
     )
 
@@ -52,7 +54,12 @@ class Work(models.Model):
     title = models.CharField(max_length=255)
     status = models.CharField(max_length=1, choices=STATUSES, default='N')
 
-    file = models.FileField(storage=OverwriteStorage(), upload_to=upload, null=True)
+    file = models.FileField(
+        upload_to=upload,
+        storage=OverwriteStorage(),
+        validators=[FileExtensionValidator(allowed_extensions=['pdf', 'zip'])],
+        null=True
+    )
 
     loaded = models.DateTimeField(auto_now_add=True)
     checked = models.DateTimeField(null=True)

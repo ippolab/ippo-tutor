@@ -20,4 +20,5 @@ urlpatterns = [
     path('api/', include('ippo_tutor.apps.students.urls')),
     path('api/', include('ippo_tutor.apps.tutors.urls')),
     path('api/', include('ippo_tutor.apps.works.urls')),
+    path('api/', include('ippo_tutor.apps.tasks.urls')),
 ]

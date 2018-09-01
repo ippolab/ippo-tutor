@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'ippo_tutor.apps.authentication',
     'ippo_tutor.apps.students',
     'ippo_tutor.apps.tutors',
-    'ippo_tutor.apps.works'
+    'ippo_tutor.apps.works',
+    'ippo_tutor.apps.tasks',
 ]
 
 MIDDLEWARE = [

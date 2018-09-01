@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.core.validators import FileExtensionValidator
 
 from .models import Subject, SubjectType, Work
 
@@ -16,18 +17,8 @@ class SubjectTypeSerializer(serializers.ModelSerializer):
 
 
 class WorkSerializer(serializers.ModelSerializer):
-    file = serializers.FileField()
+    file = serializers.FileField(validators=[FileExtensionValidator(allowed_extensions=['pdf', 'zip'])])
 
     class Meta:
         model = Work
-        fields = (
-            'title',
-            'status',
-            'file',
-            'loaded',
-            'checked',
-            'subject',
-            'subject_type',
-            'student',
-            'tutor',
-        )
+        fields = '__all__'
