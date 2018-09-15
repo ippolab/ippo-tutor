@@ -94,7 +94,7 @@ db.sqlite3
 /out-tsc
 
 # dependencies
-/node_modules
+**/node_modules
 
 # IDEs and editors
 /.idea
@@ -111,6 +111,7 @@ db.sqlite3
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+**/.vscode
 
 # misc
 /.sass-cache

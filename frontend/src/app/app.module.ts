@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {RouterModule} from '@angular/router';
+import { HttpClientModule }   from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { UploadFormComponent } from './upload-form/upload-form.component';
-import {RouterModule} from '@angular/router';
 
 const routes = [
   {path: 'upload', component: UploadFormComponent},
