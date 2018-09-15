@@ -12,6 +12,8 @@ pyjwt = "*"
 pipfile = "*"
 django-rest-auth = "*"
 djangorestframework-jwt = "*"
+gunicorn = "*"
+"psycopg2" = "*"
 
 [dev-packages]
 werkzeug = "*"
