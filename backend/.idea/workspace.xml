@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5677beb-12f1-4dca-873c-d4a5febd8b1a" name="Default Changelist" comment="added permissions to works app">
-      <change beforePath="$PROJECT_DIR$/ippo_tutor/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ippo_tutor/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -406,9 +406,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1920" height="1052" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14049146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14049146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -423,7 +422,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32967034" />
       <window_info anchor="bottom" id="manage.py@backend" order="10" weight="0.32967034" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5016026" side_tool="true" weight="0.33186814" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49839744" visible="true" weight="0.23846154" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49839744" visible="true" weight="0.23846154" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.3277487" />
       <window_info anchor="bottom" id="REST Client" order="14" weight="0.44505495" />
       <window_info anchor="bottom" id="Messages" order="15" />
