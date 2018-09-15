@@ -97,7 +97,9 @@ db.sqlite3
 **/node_modules
 
 # IDEs and editors
-**/.idea
+**/.idea/workspace.xml
+**/.idea/usage.statistics.xml
+**/.idea/tasks.xml
 .project
 .classpath
 .c9/
