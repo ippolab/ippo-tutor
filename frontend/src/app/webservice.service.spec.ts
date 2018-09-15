@@ -1,15 +1,15 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {inject, TestBed} from '@angular/core/testing';
 
-import { WebserviceService } from './webservice.service';
+import {WebserviceService} from './webservice.service';
 
 describe('WebserviceService', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [WebserviceService]
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            providers: [WebserviceService]
+        });
     });
-  });
 
-  it('should be created', inject([WebserviceService], (service: WebserviceService) => {
-    expect(service).toBeTruthy();
-  }));
+    it('should be created', inject([WebserviceService], (service: WebserviceService) => {
+        expect(service).toBeTruthy();
+    }));
 });
