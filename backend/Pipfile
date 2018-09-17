@@ -13,7 +13,7 @@ pipfile = "*"
 django-rest-auth = "*"
 djangorestframework-jwt = "*"
 gunicorn = "*"
-"psycopg2" = "*"
+coverage = "*"
 
 [dev-packages]
 werkzeug = "*"
