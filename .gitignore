@@ -132,3 +132,6 @@ testem.log
 .DS_Store
 Thumbs.db
 .directory
+
+#rubbish
+templateAuth
