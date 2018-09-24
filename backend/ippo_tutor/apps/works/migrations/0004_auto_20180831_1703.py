@@ -2,6 +2,7 @@
 
 from django.db import migrations, models
 import ippo_tutor.apps.works.models
+import ippo_tutor.apps.core.storage
 
 
 class Migration(migrations.Migration):
@@ -14,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='work',
             name='file',
-            field=models.FileField(null=True, storage=ippo_tutor.apps.works.models.OverwriteStorage(), upload_to=ippo_tutor.apps.works.models.upload),
+            field=models.FileField(null=True, storage=ippo_tutor.apps.core.storage.OverwriteStorage(), upload_to=ippo_tutor.apps.core.storage.upload_work),
         ),
         migrations.AlterField(
             model_name='work',

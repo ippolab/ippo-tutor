@@ -3,7 +3,7 @@
 from django.db import migrations, models
 import django.db.models.deletion
 import ippo_tutor.apps.works.models
-
+import ippo_tutor.apps.core.storage
 
 class Migration(migrations.Migration):
 
@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='work',
             name='file',
-            field=models.FileField(null=True, upload_to=ippo_tutor.apps.works.models.upload),
+            field=models.FileField(null=True, upload_to=ippo_tutor.apps.core.storage.upload_work),
         ),
         migrations.AlterField(
             model_name='work',

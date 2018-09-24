@@ -1,20 +1,16 @@
 from rest_framework import routers
 from django.urls import path
 
-from .views import (
-    SubjectViewSet,
-    SubjectTypeViewSet,
-    WorkViewSet,
-    download_file
-)
+from .views import WorkViewSet, download_document, download_source
+
 
 router = routers.DefaultRouter()
-router.register('subjects', SubjectViewSet)
 router.register('works', WorkViewSet)
-router.register('subjects-types', SubjectTypeViewSet)
 
 urlpatterns = [
-    path('works-downloads/<pk>/', download_file)
+    path('works-document/<pk>/', download_document),
+    path('works-source/<pk>/', download_source)
+
 ]
 
 urlpatterns += router.urls
