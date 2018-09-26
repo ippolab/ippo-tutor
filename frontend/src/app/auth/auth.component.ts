@@ -1,46 +1,60 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 
 import { User } from '../users';
-import {HttpclientService} from '../httpclient.service'
-import { Observable } from '../../../node_modules/rxjs';
+import { HttpclientService } from '../httpclient.service';
 import { Student } from '../users';
+import { UserStorerService } from '../user-storer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css'],
-  providers:[HttpclientService]
+  providers: []
 })
 
 export class AuthComponent implements OnInit {
-
-  myUser = new User("", "", false);
-  myStudent = new Student('win', '', '', '');
-
+  username = '';
   password = '';
-  clickMessage = '';
+  error = false;
+  errorMessage = '';
 
-  onClickMe(name : string, password : string) {
-    this.clientService.sendAuthForm(name, password).subscribe(data => this.myUser=data);
-    if(this.myUser.istutor == false) this.clientService.getStudent().subscribe(data => this.myStudent=data)
-    //todo else getTutor
-    this.success();
+  constructor(private clientService: HttpclientService,
+    private storageService: UserStorerService,
+    private router: Router) {
+    if (storageService.loadUserFromStorage()) {
+      router.navigate(['/']);
+    }
   }
 
-  success(){
-    this.clickMessage = this.myStudent.first_name;
-  }
+  onClickLogin(username: string, password: string) {
+    const user = new User('', '', false);
+    this.clientService.login(username, password).subscribe(
+      (data) => {
+        user.token = data['token'];
+        user.username = data['user']['username'];
+        user.istutor = data['user']['is_tutor'];
 
-  fail(){
-    this.clickMessage = 'you are my hlebushek';
-  }
-    
- 
+        if (user.istutor) {
+          // TODO
+        }
 
-  constructor(private clientService: HttpclientService){}
+        this.storageService.setUser(user);
+        this.router.navigate(['/']);
+      }, error => {
+        this.error = true;
+        this.errorMessage = error['error']['non_field_errors'][0];
+      }
+    );
+  }
 
   ngOnInit() {
+    this.storageService.loadUserFromStorage();
+    const user = this.storageService.getUser();
+    if (user.username !== '') {
+      this.router.navigate(['/upload']);
+    }
   }
-
 }

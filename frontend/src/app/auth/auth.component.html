@@ -1,24 +1,22 @@
+<div class="alert alert-danger" role="alert" *ngIf="error">
+  {{ errorMessage }}
+</div>
 <div class="container">
   <div class="row">
-      <div class="col-sm">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm" style="align-items: center">
+      <div class="card-body" style="height: 250px; width: 300px; ">
+        <label>Логин</label>
+        <input type="email" class="form-control" placeholder="Шифр Студенческого" [(ngModel)]="username">
+        <label>Пароль</label>
+        <input type="password" class="form-control" placeholder="Шифр Студенческого" [(ngModel)]="password">
+        <button type="submit" class="btn btn-dark" id="log_btn" (click)="onClickLogin(username, password)">Вход</button>
       </div>
-      <div class="col-sm" style="align-items: center">
-          <div class="card-body" style="height: 250px; width: 300px; ">
-              <label>Логин</label>
-              <input type="email" class="form-control" placeholder="Шифр Студенческого" [(ngModel)]="myUser.username">
-              <label>Пароль</label>
-              <input type="password" class="form-control" placeholder="Шифр Студенческого" [(ngModel)]="password">
-              <button type="submit" class="btn btn-dark" id="log_btn" (click)="onClickMe()">Вход</button>
-          </div>
-      </div>
-      <div class="col-sm" style="height: 10px;"></div>
+    </div>
+    <div class="col-sm" style="height: 10px;"></div>
   </div>
 </div>
-
-  <div style="text-align: center;">
-  <h1>{{clickMessage}}</h1>
-  <h1>{{succesfulMessage}}</h1>
-  </div>
 
 
 
