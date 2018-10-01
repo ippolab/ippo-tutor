@@ -1,0 +1,50 @@
+<div class="alert alert-danger" role="alert" *ngIf="error">
+  {{ errorMessage }}
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm" style="align-items: center">
+      <div class="card-body" style="height: 250px; width: 300px; ">
+        <label>Логин</label>
+        <input type="email" class="form-control" placeholder="Шифр Студенческого" [(ngModel)]="username">
+        <label>Пароль</label>
+        <input type="password" class="form-control" placeholder="Шифр Студенческого" [(ngModel)]="password">
+        <button type="submit" class="btn btn-dark" id="log_btn" (click)="onClickLogin(username, password)">Вход</button>
+      </div>
+    </div>
+    <div class="col-sm" style="height: 10px;"></div>
+  </div>
+</div>
+
+
+
+
+<!--
+<h1>User auth form</h1>
+
+<h2>{{myUser.name}} Details</h2>
+
+<div class="container">
+  <h1>Hero Form</h1>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="myUser.username">
+    </div>
+
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego</label>
+      <input type="text" class="form-control" id="alterEgo" [(ngModel)]="myUser.password">
+    </div>
+
+    <button (click)="onClickMe(myUser.username)" >help</button>
+</div>
+
+
+
+<h1>{{myUser.username}}</h1>
+<h1>{{myUser.password}}</h1>
+<h1>{{myUser.istutor}}</h1>
+<h1>{{clickMessage}}</h1>
+-->

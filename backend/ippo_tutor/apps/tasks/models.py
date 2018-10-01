@@ -1,35 +1,38 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
 
-import os
-
-from ippo_tutor.apps.works.models import Subject, SubjectType, Work, OverwriteStorage
-from ippo_tutor.apps.students.models import Group
 from ippo_tutor.apps.tutors.models import TutorProfile
+from ippo_tutor.apps.students.models import Group
+from ippo_tutor.apps.core import storage
 
 
-def upload(instance, file_name):
-    file_path = os.path.join(
-        'tasks_files',
-        str(instance.group),
-        str(instance.subject),
-        str(instance.subject_type),
-        file_name
-    )
+class Subject(models.Model):
+    name = models.CharField(max_length=32)
 
-    return file_path
+    def __str__(self):
+        return self.name
+
+
+class SubjectType(models.Model):
+    name = models.CharField(max_length=12)
+
+    def __str__(self):
+        return self.name
 
 
 class Task(models.Model):
-    group = models.ForeignKey(Group, on_delete=models.CASCADE)
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
-    subject_type = models.ForeignKey(SubjectType, on_delete=models.CASCADE)
-    description = models.CharField(max_length=511, blank=False, null=False)
+    class Meta:
+        unique_together = (('title', 'group', 'subject', 'subject_type',),)
+
     zip_with_templates = models.FileField(
-        upload_to=upload,
-        storage=OverwriteStorage(),
+        upload_to=storage.upload_task,
+        storage=storage.OverwriteStorage(),
         validators=[FileExtensionValidator(allowed_extensions=['zip'])],
         null=True
     )
-    changed = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(max_length=256)
+    description = models.CharField(max_length=512, blank=False, null=False)
+    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    subject_type = models.ForeignKey(SubjectType, on_delete=models.CASCADE)
     tutor = models.ForeignKey(TutorProfile, null=True, on_delete=models.SET_NULL)

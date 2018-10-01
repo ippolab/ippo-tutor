@@ -4,7 +4,7 @@ import django.core.validators
 from django.db import migrations, models
 import django.db.models.deletion
 import ippo_tutor.apps.tasks.models
-import ippo_tutor.apps.works.models
+import ippo_tutor.apps.core.storage
 
 
 class Migration(migrations.Migration):
@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('description', models.CharField(max_length=511)),
-                ('zip_with_templates', models.FileField(null=True, storage=ippo_tutor.apps.works.models.OverwriteStorage(), upload_to=ippo_tutor.apps.tasks.models.upload, validators=[django.core.validators.FileExtensionValidator(allowed_extensions=['zip'])])),
+                ('zip_with_templates', models.FileField(null=True, storage=ippo_tutor.apps.core.storage.OverwriteStorage(), upload_to=ippo_tutor.apps.core.storage.upload_task, validators=[django.core.validators.FileExtensionValidator(allowed_extensions=['zip'])])),
                 ('changed', models.DateTimeField(auto_now_add=True)),
                 ('group', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='students.Group')),
                 ('subject', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='works.Subject')),

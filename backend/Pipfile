@@ -14,11 +14,13 @@ django-rest-auth = "*"
 djangorestframework-jwt = "*"
 gunicorn = "*"
 coverage = "*"
-django-rest-swagger = "*"
 coreapi = "*"
+django-dotenv = "*"
+"psycopg2-binary" = "*"
 
 [dev-packages]
 werkzeug = "*"
+coverage = "*"
 
 [requires]
 python_version = "3.7"

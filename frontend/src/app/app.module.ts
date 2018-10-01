@@ -1,29 +1,30 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-import {AppComponent} from './app.component';
-import {LoginFormComponent} from './login-form/login-form.component';
-import {UploadFormComponent} from './upload-form/upload-form.component';
+import { AppComponent } from './app.component';
+import { AuthComponent } from './auth/auth.component';
+import { StudentUploadComponent } from './student-upload/student-upload.component';
 
-const routes = [
-    {path: 'upload', component: UploadFormComponent},
-    {path: 'login', component: LoginFormComponent},
-];
+import { AppRoutingModule } from './app-routing.module';
+import { UserStorerService } from './user-storer.service';
+import { HttpclientService } from './httpclient.service';
 
-// @ts-ignore
+
 @NgModule({
-    declarations: [
-        AppComponent,
-        LoginFormComponent,
-        UploadFormComponent
-    ],
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot(routes)
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    AuthComponent,
+    StudentUploadComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule
+  ],
+  providers: [UserStorerService, HttpclientService],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

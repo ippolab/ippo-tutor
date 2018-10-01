@@ -1,11 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-.overlay {
-    background: grey url("back-ground.jpg") no-repeat center top/cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    overflow: auto;
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
+body{
+    background-image:url('./app/img/back_3.jpg');
+    background-color: aliceblue;
 }
