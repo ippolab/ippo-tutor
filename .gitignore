@@ -132,6 +132,7 @@ testem.log
 .DS_Store
 Thumbs.db
 .directory
+logs
 
 #rubbish
 templateAuth

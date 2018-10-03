@@ -8,4 +8,4 @@ RUN pip install pipenv && \
     pip install -r requirements.txt
 ADD . /src/
 RUN cp /src/config/settings.py /src/ippo_tutor/
-CMD python manage.py migrate && gunicorn ippo_tutor.wsgi -b 0.0.0.0:8000 -w 4
+CMD python manage.py migrate && gunicorn ippo_tutor.wsgi -c /src/config/gunicorn/gunicorn.conf

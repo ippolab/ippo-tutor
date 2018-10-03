@@ -5,9 +5,10 @@ services:
     build: .
     container_name: nz01
     ports:
-      - "8000:8000"
+      - "8000:80"
     volumes:
       - ./backend/config/nginx:/etc/nginx/conf.d
+      - ./logs/:/logs
     depends_on:
       - backend_web
   backend_web:
@@ -16,6 +17,7 @@ services:
     container_name: dz01
     volumes:
       - ./media/:/media
+      - ./logs/:/logs
     depends_on:
       - db
     expose:
