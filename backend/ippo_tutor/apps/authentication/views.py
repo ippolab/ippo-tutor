@@ -56,4 +56,4 @@ class CheckAuthView(generics.RetrieveAPIView):
     queryset = User.objects.all()
 
     def retrieve(self, request, *args, **kwargs):
-        return Response({"username": request.user.username, "is_tutor": request.user.username, "token": request.auth})
+        return Response({"username": request.user.username, "is_tutor": request.user.is_tutor, "token": request.auth})
