@@ -1,4 +1,4 @@
-from rest_framework import status, viewsets
+from rest_framework import status, viewsets, generics
 from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
@@ -49,3 +49,11 @@ class UserViewSet(viewsets.ModelViewSet):
             raise ValidationError('User already exists.')
 
         User.objects.create_user(**serializer.validated_data)
+
+
+class CheckAuthView(generics.RetrieveAPIView):
+    permission_classes = [IsAuthenticated]
+    queryset = User.objects.all()
+
+    def retrieve(self, request, *args, **kwargs):
+        return Response({"username": request.user.username, "is_tutor": request.user.username, "token": request.auth})
