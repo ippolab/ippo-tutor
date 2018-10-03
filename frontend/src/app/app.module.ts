@@ -1,30 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core'
 
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
-import { StudentUploadComponent } from './student-upload/student-upload.component';
-
-import { AppRoutingModule } from './app-routing.module';
-import { UserStorerService } from './user-storer.service';
-import { HttpclientService } from './httpclient.service';
-
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    StudentUploadComponent
+    
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    AppRoutingModule
+    CoreModule
   ],
-  providers: [UserStorerService, HttpclientService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
