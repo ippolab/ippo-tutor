@@ -25,3 +25,5 @@ services:
   db:
     image: postgres:latest
     container_name: pz01
+    volumes:
+       - ./postgresdata:/var/lib/postgresql/data

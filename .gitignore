@@ -133,6 +133,8 @@ testem.log
 Thumbs.db
 .directory
 logs
+media
+postgresdata
 
 #rubbish
 templateAuth
