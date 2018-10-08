@@ -1,3 +1,33 @@
-<p>
-  auth works!
-</p>
+<div class="auth-page" style="padding-top: 100px">
+  <div class="container page">
+    <div class="row">
+
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">{{ title }}</h1>
+        <app-list-errors [errors]="errors"></app-list-errors>
+        <form [formGroup]="authForm" (ngSubmit)="submitForm()">
+          <fieldset [disabled]="isSubmitting">
+            <fieldset class="form-group">
+              <input
+                formControlName="username"
+                placeholder="Username"
+                class="form-control form-control-lg"
+                type="text" />
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                formControlName="password"
+                placeholder="Password"
+                class="form-control form-control-lg"
+                type="password" />
+            </fieldset>
+              <button class="btn btn-block btn-primary" [disabled]="!authForm.valid" type="submit">
+                {{ title }}
+              </button>
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
