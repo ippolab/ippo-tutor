@@ -1,60 +1,53 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
-
-import { User } from '../users';
-import { HttpclientService } from '../httpclient.service';
-import { Student } from '../users';
-import { UserStorerService } from '../user-storer.service';
-import { Router } from '@angular/router';
+import { Errors, UserService } from '../core';
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css'],
-  providers: []
+  selector: 'app-auth-page',
+  templateUrl: './auth.component.html'
 })
-
 export class AuthComponent implements OnInit {
-  username = '';
-  password = '';
-  error = false;
-  errorMessage = '';
+  title: String = '';
+  errors: Errors = {errors: {}};
+  isSubmitting = false;
+  authForm: FormGroup;
 
-  constructor(private clientService: HttpclientService,
-    private storageService: UserStorerService,
-    private router: Router) {
-    if (storageService.loadUserFromStorage()) {
-      router.navigate(['/']);
-    }
-  }
-
-  onClickLogin(username: string, password: string) {
-    const user = new User('', '', false);
-    this.clientService.login(username, password).subscribe(
-      (data) => {
-        user.token = data['token'];
-        user.username = data['user']['username'];
-        user.istutor = data['user']['is_tutor'];
-
-        if (user.istutor) {
-          // TODO
-        }
-
-        this.storageService.setUser(user);
-        this.router.navigate(['/']);
-      }, error => {
-        this.error = true;
-        this.errorMessage = error['error']['non_field_errors'][0];
-      }
-    );
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private userService: UserService,
+    private fb: FormBuilder
+  ) {
+    // use FormBuilder to create a form group
+    this.authForm = this.fb.group({
+      'username': ['', Validators.required],
+      'password': ['', Validators.required]
+    });
   }
 
   ngOnInit() {
-    this.storageService.loadUserFromStorage();
-    const user = this.storageService.getUser();
-    if (user.username !== '') {
-      this.router.navigate(['/upload']);
-    }
+    this.route.url.subscribe(data => {
+      // Get the last piece of the URL (it's either 'login' or 'register')
+      // Set a title for the page accordingly
+      this.title = 'Sign in';
+    });
+  }
+
+  submitForm() {
+    this.isSubmitting = true;
+    this.errors = {errors: {}};
+
+    const credentials = this.authForm.value;
+    this.userService
+    .attemptAuth(credentials)
+    .subscribe(
+      data => this.router.navigateByUrl('/'),
+      err => {
+        this.errors = err;
+        this.isSubmitting = false;
+      }
+    );
   }
 }

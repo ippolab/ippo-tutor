@@ -1,30 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core';
 
 import { AppComponent } from './app.component';
-import { AuthComponent } from './auth/auth.component';
-import { StudentUploadComponent } from './student-upload/student-upload.component';
-
+import { AuthModule } from './auth/auth.module';
+import {
+  FooterComponent,
+  HeaderComponent,
+  SharedModule
+}from './shared';
 import { AppRoutingModule } from './app-routing.module';
-import { UserStorerService } from './user-storer.service';
-import { HttpclientService } from './httpclient.service';
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
-    StudentUploadComponent
+    FooterComponent,
+    HeaderComponent,
   ],
   imports: [
+    AuthModule,
     BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    AppRoutingModule
+    CoreModule,
+    AppRoutingModule,
+    SharedModule
   ],
-  providers: [UserStorerService, HttpclientService],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}
