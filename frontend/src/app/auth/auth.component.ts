@@ -28,11 +28,6 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.url.subscribe(data => {
-      // Get the last piece of the URL (it's either 'login' or 'register')
-      // Set a title for the page accordingly
-      this.title = 'Sign in';
-    });
   }
 
   submitForm() {
@@ -45,6 +40,7 @@ export class AuthComponent implements OnInit {
     .subscribe(
       data => this.router.navigateByUrl('/'),
       err => {
+        err['errors'] = err['non_field_errors'];
         this.errors = err;
         this.isSubmitting = false;
       }

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AuthComponent } from './auth.component';
 import { NoAuthGuard } from './no-auth-guard.service';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from '../core';
+import { LogoutComponent } from './logout.component';
 
 const routes: Routes = [
   {
@@ -10,6 +12,11 @@ const routes: Routes = [
     component: AuthComponent,
     canActivate: [NoAuthGuard]
   },
+  {
+    path: 'logout',
+    component: LogoutComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

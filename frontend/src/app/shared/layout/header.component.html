@@ -1,37 +1,44 @@
 <nav class="navbar navbar-light">
     <div class="container">
       <a class="navbar-brand" routerLink="/">ИППО</a>
-  
+
       <!-- Show this for logged out users -->
       <ul *appShowAuthed="false"
         class="nav navbar-nav pull-xs-right">
-  
+
         <li class="nav-item">
           <a class="nav-link"
             routerLink="/">
             Home
           </a>
         </li>
-  
+
         <li *ngIf="!isSubmitting" class="nav-item">
           <a class="nav-link"
             routerLink="/login"
             routerLinkActive="active">
             Sign in
           </a>
-        </li>  
+        </li>
       </ul>
-  
+
       <!-- Show this for logged in users -->
     <ul *appShowAuthed="true"
     class="nav navbar-nav pull-xs-right">
 
     <li class="nav-item">
       <a class="nav-link"
-        [routerLink]="['/profile', currentUser.username]"
+        routerLink="/profile"
         routerLinkActive="active">
-        <img [src]="currentUser.image" *ngIf="currentUser.image" class="user-pic" />
         {{ currentUser.username }}
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link"
+        routerLink="/logout"
+        routerLinkActive="active">
+        logout
       </a>
     </li>
 
